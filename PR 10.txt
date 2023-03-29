@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main()
+{
+    int decimal, binary = 0, base = 1, digit;
+
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimal);
+
+    while (decimal != 0)
+    {
+        digit = decimal % 2;
+        binary = binary + digit * base;
+        decimal = decimal / 2;
+        base = base * 10;
+    }
+
+    printf("Binary equivalent: %d", binary);
+
+    return 0;
+}
