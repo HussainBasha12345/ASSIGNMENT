@@ -21,7 +21,7 @@ int main() {
             secondSmallest = arr[i];
         }
     }
-   ![Screenshot_20230104_101216](https://user-images.githubusercontent.com/129190698/228574069-0a498224-75ea-4d7e-8df8-a7346298660c.png)
+   
  printf("The largest element in the array is: %d\n", largest);
     printf("The second largest element in the array is: %d\n", secondLargest);
     printf("The smallest element in the array is: %d\n", smallest);
@@ -29,3 +29,4 @@ int main() {
     
     return 0;
 }
+![Screenshot_20230329_201759](https://user-images.githubusercontent.com/129190698/228577575-7eed0ae7-412a-48a6-b09c-f5e130179d57.png)
