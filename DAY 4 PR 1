@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+struct employee {
+   int empID;
+   char name[30];
+   char designation[30];
+   char department[30];
+   float salary;
+};
+
+int main() {
+   struct employee emp;e
+
+   printf("Enter Employee ID: ");
+   scanf("%d", &emp.empID);
+
+   printf("Enter Employee Name: ");
+   scanf("%s", emp.name);
+
+   printf("Enter Employee Designation: ");
+   scanf("%s", emp.designation);
+
+   printf("Enter Employee Department: ");
+   scanf("%s", emp.department);
+
+   printf("Enter the Employee Salary: ");
+   scanf("%f", &emp.salary);
+
+   printf("\nemployee ID: %d", emp.empID);
+   printf("\nemployee Name: %s", emp.name);
+   printf("\nemployee Designation: %s", emp.designation);
+   printf("\nemployee Department: %s", emp.department);
+   printf("\nemployee Salary: %.2f", emp.salary);
+
+   return 0;
+}
