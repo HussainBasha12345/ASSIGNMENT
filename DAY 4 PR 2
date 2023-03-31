@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#define MAX_PLAYERS 11
+
+struct Player {
+    char name[50];
+    int runs_scored;
+};
+
+int main() {
+    struct Player players[MAX_PLAYERS];
+    int num_players, i, total_runs = 0;
+
+    printf("Enter number of players (maximum %d): ", MAX_PLAYERS);
+    scanf("%d", &num_players);
+
+    if (num_players > MAX_PLAYERS) {
+        printf("Maximum number of players is %d.\n", MAX_PLAYERS);
+        return 1;
+    }
+
+    for (i = 0; i < num_players; i++) {
+        printf("Enter name of player %d: ", i + 1);
+        scanf("%s", players[i].name);
+
+        printf("Enter runs scored by %s: ", players[i].name);
+        scanf("%d", &players[i].runs_scored);
+
+        total_runs += players[i].runs_scored;
+    }
+
+    printf("Total runs scored by the team: %d\n", total_runs);
+
+    return 0;
+}
