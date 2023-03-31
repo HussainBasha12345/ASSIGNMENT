@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+struct Date {
+    int day;
+    int month;
+    int year;
+};
+
+struct Student {
+    char name[50];
+    int roll_number;
+    struct Date birthday;
+    struct Date admission_date;
+};
+
+int calculate_age(struct Date birthday, struct Date admission_date) {
+    int age = admission_date.year - birthday.year;
+
+    if (admission_date.month < birthday.month ||
+        (admission_date.month == birthday.month && admission_date.day < birthday.day)) {
+        age--;
+    }
+
+    return age;
+}
+
+int main() {
+    struct Student student;
+    int age;
+
+    printf("Enter name of student: ");
+    scanf("%s", student.name);
+
+    printf("Enter roll number of student: ");
+    scanf("%d", &student.roll_number);
+
+    printf("Enter student's birthday (DD MM YYYY): ");
+    scanf("%d %d %d", &student.birthday.day, &student.birthday.month, &student.birthday.year);
+
+    printf("Enter student's admission date (DD MM YYYY): ");
+    scanf("%d %d %d", &student.admission_date.day, &student.admission_date.month, &student.admission_date.year);
+
+    age = calculate_age(student.birthday, student.admission_date);
+
+    printf("Age of student at the time of admission: %d\n", age);
+
+    return 0;
+}
