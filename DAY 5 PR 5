@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+int main() {
+    FILE *input_file, *output_file;
+    int letter_counts[26] = {0};
+    char ch;
+
+    input_file = fopen("data.txt", "r");
+    if (input_file == NULL) {
+        printf("Error opening input file!\n");
+        exit(1);
+    }
+
+    while ((ch = fgetc(input_file)) != EOF) {
+        if (isalpha(ch)) {
+            letter_counts[toupper(ch) - 'A']++;
+        }
+    }
+
+    fclose(input_file);
+
+    output_file = fopen("statistics.txt", "w");
+    if (output_file == NULL) {
+        printf("Error opening output file!\n");
+        exit(1);
+    }
+
+    for (int i = 0; i < 26; i++) {
+        fprintf(output_file, "%c: %d\n", 'A' + i, letter_counts[i]);
+    }
+
+    fclose(output_file);
+
+    printf("Letter counts written to statistics.txt\n");
+
+    return 0;
+}
